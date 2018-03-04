@@ -2,25 +2,83 @@
 var player = "";
 var playerHealth = 0;
 var playerAp =0;
-var playerCap = 0;
+
+var defender = "";
+var defenderHealth = 0 ;
+var defenderCap = 0;
+
 var scoreDiv = $(".score");
 var target = Math.floor(Math.random() * 90)+19; console.log ('target', target);
 var targetDiv = $(".target");
+var bullpenBool = true;
+var bullpenBool2 = true;
 
-var emerald = Math.floor(Math.random() * 12); console.log ('emerald', emerald);
 var wins = 0;
 var losses = 0;
 
+//Logic that determines what happens with clicks on the character images
 $('.char').click(function() {
-  console.log('in char click')
-  player = this.name;
-  playerHealth = ($(this).attr('hp'));
-  playerAp = ($(this).attr('ap'));
-  playerCap = ($(this).attr('cap'));
-  playerImg = ($(this).attr('src'));
-  console.log('player name post click', player,'health', playerHealth, 'attack power', playerAp, 'counter', playerCap, playerImg);
-  // winCondition();
+  //If there is no image in player or defender box then moved the first character to player box
+  if ((bullpenBool) && (bullpenBool2)){
+    bullpenBool = false;
+    player = this.name;
+    playerHealth = parseInt(($(this).attr('hp')));
+    playerAp = parseInt(($(this).attr('ap')));
+    playerImg = ($(this).attr('src'));
+    ($(this).attr('src',""));
+    ($(this).attr('alt',""));
+    ($('.hero').attr('src',playerImg));
+    ($('.instructions').text('Pick a defender'))
+    console.log('player name post click', player,'health', playerHealth, 'attack power', playerAp, playerImg);
+    // winCondition();
+
+  //If there is an image in player box move next character to defender box
+  } else if ((bullpenBool === false) && (bullpenBool2)) {
+    bullpenBool2 = false;
+    defender = this.name;
+    defenderHealth = parseInt(($(this).attr('hp')));
+    defenderCap = parseInt(($(this).attr('cap')));
+    defenderImg = ($(this).attr('src'));
+    ($(this).attr('src',""));
+    ($(this).attr('alt',""));
+    ($('.defender').attr('src',defenderImg));
+    ($('.instructions').text('Good Luck! Click Attack to take him down'))
+    console.log('defender name post click', defender,'health', defenderHealth, 'counter', defenderCap, defenderImg);
+  } 
 });
+
+// function healthcheck();{
+
+// }
+
+$('.attackBtn').click(function() {
+  // player health is above zero and defender health is above zero
+  if ((playerHealth >= 0) && (defenderHealth >= 0)){
+    playerHealth -= defenderCap;
+      if (playerHealth <= 0) {
+        console.log("in if");
+        return;
+      }
+    defenderHealth -= playerAp;
+      if (defenderHealth <=0) {
+        console.log('in defender if');
+        return;
+      }
+    playerAp += playerAp;
+    console.log('player hp ',playerHealth, 'defender hp', defenderHealth, 'player AP',playerAp);
+  // player health is still above zero but defender is dead
+  } else if((playerHealth >= 0) &&(defenderHealth <= 0 )){
+    ($('.instructions').text('you took down', defender, 'please choose a new enemy'));
+    bullpenBool2 = true;
+    ($('.defender').attr('src',''));
+    ($('.defeated').attr('src',defenderImg));
+  // player is dead... lost game
+  } else if ((playerHealth <= 0) &&(defenderHealth >= 0)){
+    alert('you lose, try again')
+  }
+    
+});
+
 
 
 // $(".crystalDiv").on("click", ".emerald", function() {
