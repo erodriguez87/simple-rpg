@@ -1,0 +1,34 @@
+body{
+  font-family: 'Karma', serif;
+  background-image: url("../images/background.jpg");
+  background-color: #cccccc;
+}
+
+.navbar{
+  background-color: rgba(2, 2, 49, 0.096);
+  border: 0px;
+  color: white;
+}
+
+.panel{
+  background-color: rgba(186, 186, 228, 0.308);
+}
+.win{
+  background: green;
+  color: white;
+}
+
+.lose{
+  background: red;
+  color: white;
+}
+
+.stdsize{
+  width: 150px;
+  height: 175px;
+}
+
+.fontclass{
+  color: white;
+  text-align: center;
+}

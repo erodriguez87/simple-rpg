@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Crystal Collectors</title>
+  <meta name="viewport" content="width=device-width, initial-scale-1">
+    <!-- Links to CSS, CDN, then custom below to override -->
+    <link href="https://fonts.googleapis.com/css?family=Karma" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+</head>
+
+<body>
+  <!-- full width header -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+          <h1>LOTR Battle</h1>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page grid -->
+
+    
+    <div class="container fontclass">
+      
+      <!-- First row, Has the pen of possible fighters -->
+      <div class = "row">
+          <div class ="bullpen">
+            <div class ="container col-lg-3 col-md-3 col-sm-6 col-xs-6 panel panel-success margin stdsize  ">aragorn
+              <img src="assets/images/aragorn.png" class="img-fluid img-responsive rounded char" name="aragorn" hp="90" ap ="20" cap ="35" alt="strong strong strong">
+            </div>
+            <div class ="container col-lg-3 col-md-3 col-sm-6 col-xs-6 panel panel-success margin stdsize">
+              <img src="assets/images/gandalf.png" class="img-fluid img-responsive rounded char" name="gandalf" hp="200" ap ="1" cap ="4"  alt="you shall not pass">gandalf
+            </div>
+            <div class ="container col-lg-3 col-md-3 col-sm-6 col-xs-6 panel panel-success margin stdsize">
+              <img src="assets/images/legolas.png" class="img-fluid img-responsive rounded char" name="legolas" hp="400" ap ="1" cap ="8"  alt="my arrows never miss">legolas
+            </div>
+            <div class ="container col-lg-3 col-md-3 col-sm-6 col-xs-6 panel panel-success margin stdsize">
+                <img src="assets/images/gimli.png" class="img-fluid img-responsive rounded char" name="gimli" hp="200" ap ="1" cap ="4"  alt="that legolas guy is real annoying">gimli
+            </div>
+          </div>
+      </div>
+      
+      <!--Separator  -->
+      <div class = "row">
+        <div class ="container col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-success margin">
+          <h3>Pick your fighter from the choices above</h3>
+          <div class = "target"></div>
+        </div>
+      </div>
+
+      <!-- Battle arena -->
+      <div class = "row">
+        <div class ="container col-lg-4 col-md-3 col-sm-2 col-xs-2 panel panel-success margin">
+          <div class ="hero"></div>
+        </div>
+        <div class ="container col-lg-4 col-md-3 col-sm-2 col-xs-2 panel panel-success margin">
+          <div class ="arena"><h3>Fight!</h3></div>
+          <button type="button" class="btn btn-outline-warning attackBtn">Attack</button>
+        </div>
+        <div class ="container col-lg-4 col-md-3 col-sm-2 col-xs-2 panel panel-success margin">
+          <div class ="defender"></div>
+        </div>
+      </div>
+
+      <!-- HP Counters -->
+      <div class = "row">
+        <div class ="container col-lg-4 col-md-3 col-sm-2 col-xs-2 panel panel-success margin">
+          <div class ="heroHP"><h5>Health: </h5></div>
+        </div>
+        <div class ="container col-lg-4 col-md-3 col-sm-2 col-xs-2 panel panel-success margin">
+          <div class ="arena"></div>
+        </div>
+        <div class ="container col-lg-4 col-md-3 col-sm-2 col-xs-2 panel panel-success margin">
+          <div class ="defenderHP"><h5>Defender Health: </h5></div>
+        </div>
+      </div>
+      
+      <!--Enemies wasted  -->
+      <div class = "row">
+        <div class ="container col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-success margin">
+          <h3>The wake you've left behind</h3>
+          <div class = "target"></div>
+        </div>
+      </div>
+      
+          </div>
+      </div>
+    </div>
+    
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/game.js" >
+    </script>
+   
+
+</body>
+<div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</div>
+
+</html>
